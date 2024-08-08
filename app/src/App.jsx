@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import SearchResult from "./components/SearchResults/SearchResult";
+import react,{ useState ,useEffect} from 'react'
+import styled from 'styled-components'
+import Search from '../src/Components/Search';
 
-export const BASE_URL = "http://localhost:9000";
+export const BASE_URL = "http://localhost:9000"
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -32,8 +32,6 @@ const App = () => {
 
   const searchFood = (e) => {
     const searchValue = e.target.value;
-
-    console.log(searchValue);
 
     if (searchValue === "") {
       setFilteredData(null);
@@ -106,7 +104,7 @@ const App = () => {
           ))}
         </FilterContainer>
       </Container>
-      <SearchResult data={filteredData} />
+      <Search data={filteredData} />
     </>
   );
 };
